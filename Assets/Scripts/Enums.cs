@@ -1,12 +1,26 @@
-public enum Path
-{
-    Path1,
-    Path2
-}
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public enum TowerType
+public class Enums : MonoBehaviour
 {
-    TowerType1,
-    TowerType2,
-    TowerType3
+    public enum Path
+    {
+        Path1,
+        Path2
+    }
+    public enum TowerType
+    {
+        Archer,
+        Sword,
+        Wizard,
+        None
+    }
+    public enum SiteLevel
+    {
+        Level1,
+        Level2,
+        Level3,
+        Unbuilt
+    }
 }

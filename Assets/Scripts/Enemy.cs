@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float speed = 1f;
     public float health = 10f;
     public int points = 1;
-    public Path path { get; set; }
+    public Enums.Path path { get; set; }
     public GameObject target { get; set; }
     private int pathIndex = 1;
 
@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            GameManager.Instance.AddCredits(points);
+            GameManager.Instance.RemoveInGameEnemy();
             Destroy(gameObject);
         }
     }
@@ -39,6 +41,15 @@ public class Enemy : MonoBehaviour
                 if (target == null)
                 {
                     Destroy(gameObject);
+                    GameManager.Instance.RemoveInGameEnemy();
+                    if (path == Enums.Path.Path1)
+                    {
+                        GameManager.Instance.AttackGate(Enums.Path.Path1);
+                    }
+                    else if (path == Enums.Path.Path2)
+                    {
+                        GameManager.Instance.AttackGate(Enums.Path.Path2);
+                    }
                 }
             }
 

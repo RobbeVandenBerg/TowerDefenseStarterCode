@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/TowerMenu.uss?fileID=7433441132597879392&amp;guid=ce6fa5c1c28570c4fbcaddf77d3493d1&amp;type=3#TowerMenu" />
+    <ui:VisualElement name="MenuButtons" style="flex-grow: 1; width: auto; height: 100%; align-items: flex-end; justify-content: flex-start; min-width: auto;">
+        <ui:Button text="Archer" parse-escape-sequences="true" display-tooltip-when-elided="true" name="archerButton" class="button" />
+        <ui:Button text="Barracks" parse-escape-sequences="true" display-tooltip-when-elided="true" name="swordButton" class="button" />
+        <ui:Button text="Wizard" parse-escape-sequences="true" display-tooltip-when-elided="true" name="wizardButton" class="button" />
+        <ui:Button text="Upgrade" parse-escape-sequences="true" display-tooltip-when-elided="true" name="updateButton" class="button" />
+        <ui:Button text="Destroy" parse-escape-sequences="true" display-tooltip-when-elided="true" name="destroyButton" class="button" />
+    </ui:VisualElement>
+</ui:UXML>
