@@ -4,6 +4,7 @@ using static Enums;
 
 public class TowerMenu : MonoBehaviour
 {
+    // Initiate variables
     private Button archerButton;
     private Button swordButton;
     private Button wizardButton;
@@ -44,6 +45,7 @@ public class TowerMenu : MonoBehaviour
         root.visible = false;
     }
 
+    // Enable function of each button
     private void OnArcherButtonClicked()
     {
         GameManager.Instance.Build(Enums.TowerType.Archer, Enums.SiteLevel.Level1);
@@ -59,7 +61,7 @@ public class TowerMenu : MonoBehaviour
     private void OnUpdateButtonClicked()
     {
         if (selectedSite == null) return;
-
+        
         Enums.SiteLevel nextLevel = selectedSite.Level + 1;
         GameManager.Instance.Build(selectedSite.TowerType, nextLevel);
     }
@@ -70,29 +72,7 @@ public class TowerMenu : MonoBehaviour
         EvaluateMenu();
     }
 
-    private void OnDestroy()
-    {
-        if (archerButton != null)
-        {
-            archerButton.clicked -= OnArcherButtonClicked;
-        }
-        if (swordButton != null)
-        {
-            swordButton.clicked -= OnSwordButtonClicked;
-        }
-        if (wizardButton != null)
-        {
-            wizardButton.clicked -= OnWizardButtonClicked;
-        }
-        if (updateButton != null)
-        {
-            updateButton.clicked -= OnUpdateButtonClicked;
-        }
-        if (destroyButton != null)
-        {
-            destroyButton.clicked -= OnArcherButtonClicked;
-        }
-    }
+
     public void SetSite(ConstructionSite site)
     {
         selectedSite = site;

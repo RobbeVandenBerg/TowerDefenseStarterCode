@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    // Initiate variables
     public static EnemySpawner Instance;
 
     public List<GameObject> Path1 = new List<GameObject>();
@@ -19,8 +20,10 @@ public class EnemySpawner : MonoBehaviour
         var script = newEnemy.GetComponentInParent<Enemy>();
         script.path = path;
         script.target = Path1[1];
+        // Increment enemy counter
         GameManager.Instance.AddInGameEnemy();
     }
+    // Assign a path to each enemy
     public GameObject RequestTarget(Enums.Path path, int index)
     {
         List<GameObject> currentPath = null;
@@ -43,14 +46,16 @@ public class EnemySpawner : MonoBehaviour
         }
         else { return currentPath[index]; }
     }
+
+    //Spawn tester
     /*private void SpawnTester()
     {
         SpawnEnemy(0, Enums.Path.Path1);
-    }*/
+    }
     private void Start()
     {
         InvokeRepeating("SpawnTester", 1f, 1f);
-    }
+    }*/
 
     public void StartWave(int number)
     {

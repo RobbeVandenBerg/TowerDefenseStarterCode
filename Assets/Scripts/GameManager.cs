@@ -5,6 +5,7 @@ using static Enums;
 
 public class GameManager : MonoBehaviour
 {
+    // Initiate variables
     private static GameManager instance;
 
     private ConstructionSite selectedSite;
@@ -39,10 +40,11 @@ public class GameManager : MonoBehaviour
     // Tower costs
     private Dictionary<TowerType, List<int>> towerPrefabCosts = new Dictionary<TowerType, List<int>>()
     {
-        { TowerType.Archer, new List<int> { 35, 70, 140 } }, 
-        { TowerType.Sword, new List<int> { 60, 135, 185 } }, 
-        { TowerType.Wizard, new List<int> { 120, 180, 250 } } 
+        { TowerType.Archer, new List<int> { 35, 70, 140 } },
+        { TowerType.Sword, new List<int> { 60, 135, 185 } },
+        { TowerType.Wizard, new List<int> { 120, 180, 250 } }
     };
+
     public void SelectSite(ConstructionSite site)
     {
         this.selectedSite = site;
@@ -96,6 +98,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        // Standard start of game values
         credits = 500;
         health = 10;
         currentWave = 0;
@@ -106,6 +109,7 @@ public class GameManager : MonoBehaviour
     {
         if (topMenu != null)
         {
+            // Update visual values to actual values
             topMenu.SetCreditsLabel("Credits: " + credits);
             topMenu.SetGateHealthLabel("Gate Health: " + health);
             topMenu.SetWaveLabel("Wave: " + currentWave);

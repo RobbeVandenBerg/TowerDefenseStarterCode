@@ -6,13 +6,14 @@ using static Enums;
 
 public class ConstructionSite
 {
-
+    // Initiate variables
     public Vector3Int TilePosition { get; private set; }
     public Vector3 WorldPosition { get; private set; }
     public SiteLevel Level { get; private set; }
     public TowerType TowerType { get; private set; }
     private GameObject tower;
 
+    // Define site where construction is possible
     public ConstructionSite(Vector3Int tilePosition, Vector3 worldPosition)
     {
         TilePosition = tilePosition;

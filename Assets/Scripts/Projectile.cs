@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Projectile : MonoBehaviour
 {
+    // Initiate variables
     public Transform target;
     public float speed;
     public int damage;

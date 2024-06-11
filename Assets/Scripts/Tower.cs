@@ -51,7 +51,7 @@ public class Tower : MonoBehaviour
         // Instantiate the bullet prefab
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 
-        // Set the bullet properties
+        // Set bullet properties
         Projectile projectile = bullet.GetComponent<Projectile>();
         if (projectile != null)
         {

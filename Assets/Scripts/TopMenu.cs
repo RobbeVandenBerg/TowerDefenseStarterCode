@@ -44,23 +44,18 @@ public class TopMenu : MonoBehaviour
             gateHealthLabel.text = text;
         }
     }
+    // Initiate start of the wave
     private void OnPlayButtonClicked()
     {
         GameManager.Instance.StartWave();
         playButton.SetEnabled(false);
     }
+    // Enable start wave button
     public void EnableWaveButton()
     {
         if (playButton != null)
         {
             playButton.SetEnabled(true);
-        }
-    }
-    private void OnDestroy()
-    {
-        if (playButton != null)
-        {
-            playButton.clicked -= OnPlayButtonClicked;
         }
     }
 }
